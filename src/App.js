@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import * as Icons from '@fortawesome/free-solid-svg-icons';
 
 //registering routes
 import Home from './components/home';
 import Personnel from './components/personnel';
 import Task from './components/task';
+import Login from './account/login';
 
 class App extends Component {
   render() {
@@ -18,12 +19,13 @@ class App extends Component {
             <ul className='navbar-nav mr-auto'>
               <li>
                 <Link to={'/'} className='nav-link'>
-                  {' '}
+                  <FontAwesomeIcon icon={Icons.faHome} />
                   Home{' '}
                 </Link>
               </li>
               <li>
                 <Link to={'/task'} className='nav-link'>
+                  <FontAwesomeIcon Icons={Icons.faAddressBook} />
                   Tasks
                 </Link>
               </li>
@@ -36,12 +38,14 @@ class App extends Component {
 
             {/* Trial user account profile */}
             <ul className='nav navbar-nav navbar-right'>
+              <Link to={'/login'} className='btn btn-primary'>
+                <FontAwesomeIcon icon={Icons.faSignInAlt} />
+                Login
+              </Link>
               <li className='dropdown'>
+                <FontAwesomeIcon icon={Icons.faCogs} />
                 <a href='#' className='dropdown-toggle' data-toggle='dropdown'>
-                  <span className='glyphicon glyphicon-user'></span> 
-                  <FontAwesomeIcon icon={faUser} />
-                  <strong>Mahesh</strong>
-                  <span className='glyphicon glyphicon-chevron-down'></span>
+                  <strong>Kepha</strong>
                 </a>
                 <ul className='dropdown-menu'>
                   <li>
@@ -91,10 +95,12 @@ class App extends Component {
             </ul>
           </nav>
           <hr />
+
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/task' component={Task} />
             <Route path='/personnel' component={Personnel} />
+            <Route path='/login' component={Login} />
           </Switch>
         </div>
       </Router>

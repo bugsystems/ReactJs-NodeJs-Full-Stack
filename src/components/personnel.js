@@ -22,7 +22,7 @@ class Personnel extends Component {
     return (
       <div>
         <h4>Personnel</h4>
-        <table className='table'>
+        <table className='table table-bordered'>
           <thead className='thead-dark'>
             <tr>
               <th>Personnel Name</th>

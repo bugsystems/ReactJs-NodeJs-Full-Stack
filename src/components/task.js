@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-class App extends Component {
+class Task extends Component {
   constructor() {
     super();
     this.state = {
@@ -22,7 +22,7 @@ class App extends Component {
       <div>
         <h4>Tasks</h4>
 
-        <table className='table'>
+        <table className='table table-bordered'>
           <thead className='thead-dark'>
             <tr>
               <th>Customer Number/ID</th>
@@ -46,4 +46,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default Task;
